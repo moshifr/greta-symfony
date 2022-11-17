@@ -1,6 +1,15 @@
 <nav>
     <ul>
-        <li><a href="">Page d'accueil</a></li>
-        <li><a href="">About us</a></li>
+        <li><a href="{{ url('homepage') }}">Page d'accueil</a></li>
+        {% if app.user and is_granted('ROLE_ADMIN') %}
+
+        <li><a href="{{ url('about-us') }}">ADMIN</a></li>
+        {% endif %}
+        <li><a href="{{ url('about-us') }}">About us</a></li>
+        {% if app.user %}
+        <li><a href="{{ url('app_logout') }}">{{ app.user }} - se déconnecter</a></li>
+        {% else %}
+        <li><a href="{{ url('app_login') }}">Login</a></li>
+        {% endif %}
     </ul>
 </nav>

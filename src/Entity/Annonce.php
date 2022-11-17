@@ -35,6 +35,10 @@ class Annonce
     #[ORM\Column(nullable: true)]
     private ?bool $enable = null;
 
+    public function __construct()
+    {
+        $this->createAt = new \DateTimeImmutable();
+    }
     public function __toString()
     {
         return $this->title;
