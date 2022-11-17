@@ -30,6 +30,15 @@ class MainController extends AbstractController
     public function aboutUs(): Response
     {
         return $this->render('main/about-us.html.twig', [
+            'page'=> 'About us'
+        ]);
+    }
+
+    #[Route('/admin', name: 'admin')]
+    public function admin(): Response
+    {
+        return $this->render('main/about-us.html.twig', [
+            'page' => 'Admin'
         ]);
     }
 }
