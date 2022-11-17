@@ -1,8 +1,19 @@
+{#  on hérite du fichier de base : template/base.html.twig #}
 {% extends 'base.html.twig' %}
 
+{#  chaque block correspond à une zone définie dans
+    la page parent
+#}
 {% block title %}Hello MainController!{% endblock %}
 
 {% block body %}
+    {#
+        ici {{  parent() }} permet de récupérer le contenu
+        présent dans le block "body" de la template parent
+
+        si on ne met pas {{ parent() }} on écrase ce qui est
+        présent dans la template parent
+    #}
     {{ parent() }}
 
     <style>
