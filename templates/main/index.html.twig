@@ -1,0 +1,33 @@
+{#  on hérite du fichier de base : template/base.html.twig #}
+{% extends 'base.html.twig' %}
+
+{#  chaque block correspond à une zone définie dans
+    la page parent
+#}
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+    {#
+        ici {{  parent() }} permet de récupérer le contenu
+        présent dans le block "body" de la template parent
+
+        si on ne met pas {{ parent() }} on écrase ce qui est
+        présent dans la template parent
+    #}
+    {{ parent() }}
+
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+
+<div class="example-wrapper">
+    <h1 style="color: green">Bonjour {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/Users/moshi/test/cours-greta/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/Users/moshi/test/cours-greta/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
+    </ul>
+</div>
+{% endblock %}

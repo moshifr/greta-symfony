@@ -14,6 +14,17 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block header %}
+            {# permet d'inclure le fichier template/include/menu.html.twig ' #}
+            {{ include('include/menu.html.twig') }}
+        {% endblock %}
+
+        {% block body %}
+
+        {% endblock %}
+
+        {% block footer %}
+            <p>Copyright ... </p>
+        {% endblock %}
     </body>
 </html>
